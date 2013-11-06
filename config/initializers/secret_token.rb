@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TusitaERP::Application.config.secret_key_base = 'fd9184c949275a641c92d7a725ef68327c995462b5db69e345a67e0beb39f4d8cada3392993f506d5a1c057315ead38e207cce07b45c4708a3293c0e4d8ced05'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+TusitaERP::Application.config.secret_key_base = secure_token
