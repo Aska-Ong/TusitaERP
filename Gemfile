@@ -42,7 +42,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
