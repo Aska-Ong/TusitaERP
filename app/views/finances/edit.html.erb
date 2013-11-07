@@ -1,0 +1,19 @@
+<% provide(:title, "Edit Record") %>
+<h1>Edit Record</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for (@finance) do |f| %>
+  <%= render 'shared/finance_error' %>
+      <%= f.input :type, collection: ["Donation","Expenses"], :selected => "Donation" %>
+
+      <%= f.input :amount %>
+
+      <%= f.input :date %>
+
+      <%= f.input :description %>
+
+      <%= f.submit 'Edit Record', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
