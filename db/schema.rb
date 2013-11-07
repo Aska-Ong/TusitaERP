@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106190130) do
+ActiveRecord::Schema.define(version: 20131107080829) do
 
-  create_table "finance_records", force: true do |t|
+  create_table "finances", force: true do |t|
     t.string   "type"
     t.decimal  "amount"
     t.date     "date"

@@ -1,5 +1,5 @@
 TusitaERP::Application.routes.draw do
-  get "finance_records/new"
+  resources :finances, only: [:new]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'users#index'

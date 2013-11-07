@@ -1,0 +1,19 @@
+<% provide(:title, 'Create New Finance Record') %>
+<h1>Create New Finance Record</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for @finance do |f| %>
+	<%= render 'shared/error_messages' %>
+      <%= f.input :type, collection: "Donation".."Expenses" %>
+
+      <%= f.text_field :amount %>
+
+      <%= f.date :date %>
+
+      <%= f.text_field :description %>
+
+      <%= f.button :createrecord, class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
