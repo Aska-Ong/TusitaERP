@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 	before_create :create_remember_token
 	validates :username,  presence: true, length: { maximum: 20 }, uniqueness: {case_sensitive: false}
 	has_secure_password
-    validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

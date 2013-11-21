@@ -1,7 +1,5 @@
 class Finance < ActiveRecord::Base
-	self.inheritance_column = nil
-	validates :type,  presence: true, length: { maximum: 8 }
-	validates :amount, presence: true , numericality: true
+	validates :amount, presence: true , numericality: {greater_than: 0}
 	validates :date, presence: true
 	validates :description, presence: true
 end

@@ -1,0 +1,7 @@
+<li>
+  <p>Transit: <%= transport.transit_id %></p>
+  <p>Name: <%= transport.name %></p>
+  <%= link_to "Edit", edit_transport_path(Transport.find(transport.id)),:class => 'btn btn-primary'%>
+  <%= link_to "Delete", transport, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
+</li>

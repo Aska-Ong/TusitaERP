@@ -1,3 +1,10 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, 'All Donation Records') %>
+<h1>All Donation Records</h1>
+<p><%= link_to "Add Records", new_finance_path ,:class => 'btn btn-primary'%></p>
 
-<p>Now you see me</p>
+<%= will_paginate %>
+<ul class="finances">
+    <%= render @finances %>
+</ul>
+
+<%= will_paginate %>

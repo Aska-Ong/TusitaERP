@@ -1,0 +1,10 @@
+<% provide(:title, 'All Transit Records') %>
+<h1>All Transit Records</h1>
+<p><%= link_to "Add Records", new_transit_path ,:class => 'btn btn-primary'%></p>
+
+<%= will_paginate %>
+<ul class="transits">
+    <%= render @transits %>
+</ul>
+
+<%= will_paginate %>

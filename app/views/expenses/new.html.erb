@@ -1,0 +1,19 @@
+<% provide(:title, 'Create New Expense') %>
+<h1>Create New Expense</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for (@expense) do |f| %>
+	<%= render 'shared/expense_error' %>
+      <%= f.association :fund, label: 'Expense Type', include_blank: false %>
+
+      <%= f.input :amount, label: 'Expense Amount' %>
+
+      <%= f.input :description, label: 'Expense Description' %>
+
+      <%= f.input :date, label: 'Date' %>
+
+      <%= f.submit 'Create Record', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

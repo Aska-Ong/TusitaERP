@@ -1,12 +1,19 @@
 TusitaERP::Application.routes.draw do
+  scope "(:locale)", :locale => /en|zh-TW|zh-CN/ do 
+  resources :transits
+  resources :transports
+  resources :expenses
+  resources :funds
   resources :finances
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'users#index'
+  match '/report',  to: 'funds#report',         via: 'get'
+  match '/event',   to: 'events#report',        via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
-  
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

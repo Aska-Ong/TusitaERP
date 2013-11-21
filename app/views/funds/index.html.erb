@@ -1,0 +1,12 @@
+<% provide(:title, 'All Fund Records') %>
+<h1>All Fund Records</h1>
+<p><%= link_to "Add Records", new_fund_path ,:class => 'btn btn-primary'%></p>
+
+<%= will_paginate %>
+<ul class="funds">
+    <%= render @funds %>
+    <li>Unallocated Balance : <%= Finance.sum(:amount) - Fund.sum(:amount) %></li>
+    <li>Total : <%= Finance.sum(:amount) %></li>
+</ul>
+
+<%= will_paginate %>

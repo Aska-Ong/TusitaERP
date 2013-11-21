@@ -1,0 +1,997 @@
+I, [2013-11-20T10:00:05.259561 #2918]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:00:05 +0800
+I, [2013-11-20T10:00:05.273294 #2918]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:00:05.296852 #2918]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (7.6ms)
+I, [2013-11-20T10:00:05.298824 #2918]  INFO -- :   Rendered layouts/_shim.html.erb (0.2ms)
+E, [2013-11-20T10:00:05.302717 #2918] ERROR -- : SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1
+I, [2013-11-20T10:00:05.303346 #2918]  INFO -- :   Rendered layouts/_header.html.erb (4.0ms)
+I, [2013-11-20T10:00:05.303544 #2918]  INFO -- : Completed 500 Internal Server Error in 30ms
+F, [2013-11-20T10:00:05.305987 #2918] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1):
+    1: <header class="navbar navbar-fixed-top">
+    2:   <div class="navbar-inner">
+    3:     <div class="container">
+    4:     <% if signed_in? %>
+    5:       <%= link_to "Tusita ERP", root_path, id: "logo" %>
+    6:     <% else %>
+    7:       <%= link_to "Tusita ERP", signin_path, id: "logo" %>
+  app/helpers/sessions_helper.rb:25:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `signed_in?'
+  app/views/layouts/_header.html.erb:4:in `_app_views_layouts__header_html_erb__785368458458365551_38042000'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___1241649155774498335_33920900'
+
+
+I, [2013-11-20T10:00:09.855751 #2918]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:00:09 +0800
+I, [2013-11-20T10:00:09.857679 #2918]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:00:09.859946 #2918]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (1.1ms)
+I, [2013-11-20T10:00:09.860562 #2918]  INFO -- :   Rendered layouts/_shim.html.erb (0.0ms)
+E, [2013-11-20T10:00:09.861609 #2918] ERROR -- : SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1
+I, [2013-11-20T10:00:09.862137 #2918]  INFO -- :   Rendered layouts/_header.html.erb (1.4ms)
+I, [2013-11-20T10:00:09.862341 #2918]  INFO -- : Completed 500 Internal Server Error in 4ms
+F, [2013-11-20T10:00:09.864370 #2918] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1):
+    1: <header class="navbar navbar-fixed-top">
+    2:   <div class="navbar-inner">
+    3:     <div class="container">
+    4:     <% if signed_in? %>
+    5:       <%= link_to "Tusita ERP", root_path, id: "logo" %>
+    6:     <% else %>
+    7:       <%= link_to "Tusita ERP", signin_path, id: "logo" %>
+  app/helpers/sessions_helper.rb:25:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `signed_in?'
+  app/views/layouts/_header.html.erb:4:in `_app_views_layouts__header_html_erb__785368458458365551_38042000'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___1241649155774498335_33920900'
+
+
+I, [2013-11-20T10:00:37.646941 #2918]  INFO -- : Started GET "/" for 127.0.0.1 at 2013-11-20 10:00:37 +0800
+I, [2013-11-20T10:00:37.651716 #2918]  INFO -- : Processing by UsersController#index as HTML
+E, [2013-11-20T10:00:37.654251 #2918] ERROR -- : SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1
+I, [2013-11-20T10:00:37.654500 #2918]  INFO -- : Completed 500 Internal Server Error in 3ms
+F, [2013-11-20T10:00:37.656091 #2918] FATAL -- : 
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1):
+  app/helpers/sessions_helper.rb:25:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `signed_in?'
+  app/controllers/users_controller.rb:50:in `signed_in_user'
+
+
+I, [2013-11-20T10:05:58.907303 #3621]  INFO -- : Migrating to CreateUsers (20131106064842)
+I, [2013-11-20T10:05:59.053991 #3621]  INFO -- : Migrating to AddIndexToUsername (20131106065242)
+I, [2013-11-20T10:05:59.244140 #3621]  INFO -- : Migrating to AddPasswordDisgestToUsers (20131106070234)
+I, [2013-11-20T10:05:59.384904 #3621]  INFO -- : Migrating to AddRememberTokenToUsers (20131106070235)
+I, [2013-11-20T10:05:59.509082 #3621]  INFO -- : Migrating to CreateFinanceRecords (20131106190130)
+I, [2013-11-20T10:05:59.633046 #3621]  INFO -- : Migrating to Renaming (20131107080829)
+I, [2013-11-20T10:05:59.765632 #3621]  INFO -- : Migrating to RemoveFieldNameFromFinance (20131110132334)
+I, [2013-11-20T10:05:59.891744 #3621]  INFO -- : Migrating to CreateFunds (20131110140136)
+I, [2013-11-20T10:06:00.015892 #3621]  INFO -- : Migrating to CreateExpenses (20131113083411)
+I, [2013-11-20T10:06:00.139860 #3621]  INFO -- : Migrating to AddingFundIdToExpenses (20131113175343)
+I, [2013-11-20T10:06:00.264566 #3621]  INFO -- : Migrating to RemovingTypeFromExpenses (20131113181317)
+I, [2013-11-20T10:06:00.397013 #3621]  INFO -- : Migrating to CreateMembers (20131117174111)
+I, [2013-11-20T10:06:00.537687 #3621]  INFO -- : Migrating to CreateTransits (20131117184144)
+I, [2013-11-20T10:06:00.669981 #3621]  INFO -- : Migrating to CreateTransports (20131117184322)
+I, [2013-11-20T10:06:00.802784 #3621]  INFO -- : Migrating to AddingHpNumberToMember (20131117184451)
+I, [2013-11-20T10:06:00.926916 #3621]  INFO -- : Migrating to CreateEvents (20131119171812)
+I, [2013-11-20T10:06:01.051509 #3621]  INFO -- : Migrating to DeletingTotalFromEvent (20131119173217)
+I, [2013-11-20T10:06:52.587363 #3683]  INFO -- : Started GET "/users" for 127.0.0.1 at 2013-11-20 10:06:52 +0800
+I, [2013-11-20T10:06:52.607113 #3683]  INFO -- : Processing by UsersController#index as HTML
+I, [2013-11-20T10:06:52.625248 #3683]  INFO -- : Redirected to http://localhost:3000/signin
+I, [2013-11-20T10:06:52.625410 #3683]  INFO -- : Filter chain halted as :signed_in_user rendered or redirected
+I, [2013-11-20T10:06:52.625666 #3683]  INFO -- : Completed 302 Found in 18ms (ActiveRecord: 0.7ms)
+I, [2013-11-20T10:06:52.635436 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:52 +0800
+I, [2013-11-20T10:06:52.638215 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:52.649208 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (8.5ms)
+I, [2013-11-20T10:06:52.651277 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.3ms)
+I, [2013-11-20T10:06:52.653900 #3683]  INFO -- :   Rendered layouts/_header.html.erb (2.1ms)
+I, [2013-11-20T10:06:52.654927 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.4ms)
+I, [2013-11-20T10:06:52.655230 #3683]  INFO -- : Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+I, [2013-11-20T10:06:52.831399 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:52 +0800
+F, [2013-11-20T10:06:52.833311 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:52.845781 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:52 +0800
+F, [2013-11-20T10:06:52.847449 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:52.848676 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:52 +0800
+F, [2013-11-20T10:06:52.850484 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:55.141089 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:55 +0800
+I, [2013-11-20T10:06:55.143876 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:55.146169 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (1.1ms)
+I, [2013-11-20T10:06:55.147746 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.1ms)
+I, [2013-11-20T10:06:55.152131 #3683]  INFO -- :   Rendered layouts/_header.html.erb (4.0ms)
+I, [2013-11-20T10:06:55.152911 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.1ms)
+I, [2013-11-20T10:06:55.153172 #3683]  INFO -- : Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+I, [2013-11-20T10:06:55.253545 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:55 +0800
+F, [2013-11-20T10:06:55.257082 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:55.259556 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:55 +0800
+F, [2013-11-20T10:06:55.260950 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:55.261711 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:55 +0800
+F, [2013-11-20T10:06:55.263358 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:55.291501 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:55 +0800
+F, [2013-11-20T10:06:55.292461 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:56.365598 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:56 +0800
+I, [2013-11-20T10:06:56.366429 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:56.368256 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (1.0ms)
+I, [2013-11-20T10:06:56.368921 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.0ms)
+I, [2013-11-20T10:06:56.370061 #3683]  INFO -- :   Rendered layouts/_header.html.erb (0.9ms)
+I, [2013-11-20T10:06:56.370320 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2013-11-20T10:06:56.370544 #3683]  INFO -- : Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+I, [2013-11-20T10:06:56.469714 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:56 +0800
+F, [2013-11-20T10:06:56.473617 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:56.474417 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:56 +0800
+F, [2013-11-20T10:06:56.476308 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:56.477315 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:56 +0800
+F, [2013-11-20T10:06:56.478332 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:56.896890 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:56 +0800
+I, [2013-11-20T10:06:56.897844 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:56.901089 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (2.3ms)
+I, [2013-11-20T10:06:56.901640 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.0ms)
+I, [2013-11-20T10:06:56.902777 #3683]  INFO -- :   Rendered layouts/_header.html.erb (1.0ms)
+I, [2013-11-20T10:06:56.903047 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2013-11-20T10:06:56.903274 #3683]  INFO -- : Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+I, [2013-11-20T10:06:57.016802 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.019730 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.020831 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.023474 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.024609 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.025876 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.055151 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.056132 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.138670 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+I, [2013-11-20T10:06:57.140677 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:57.145115 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (2.4ms)
+I, [2013-11-20T10:06:57.145661 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.0ms)
+I, [2013-11-20T10:06:57.146804 #3683]  INFO -- :   Rendered layouts/_header.html.erb (1.0ms)
+I, [2013-11-20T10:06:57.147059 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2013-11-20T10:06:57.147267 #3683]  INFO -- : Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+I, [2013-11-20T10:06:57.245113 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.248114 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.249229 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.250471 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.251287 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.252911 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.373135 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+I, [2013-11-20T10:06:57.374996 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:57.376812 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (0.9ms)
+I, [2013-11-20T10:06:57.377682 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.1ms)
+I, [2013-11-20T10:06:57.381317 #3683]  INFO -- :   Rendered layouts/_header.html.erb (3.1ms)
+I, [2013-11-20T10:06:57.382134 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.2ms)
+I, [2013-11-20T10:06:57.382747 #3683]  INFO -- : Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+I, [2013-11-20T10:06:57.476919 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.478556 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.479674 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.480690 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.481526 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.482753 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.515486 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.516443 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.625215 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+I, [2013-11-20T10:06:57.626740 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:57.631238 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (2.6ms)
+I, [2013-11-20T10:06:57.632849 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.2ms)
+I, [2013-11-20T10:06:57.633957 #3683]  INFO -- :   Rendered layouts/_header.html.erb (0.9ms)
+I, [2013-11-20T10:06:57.634229 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2013-11-20T10:06:57.634446 #3683]  INFO -- : Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+I, [2013-11-20T10:06:57.730587 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.732717 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.733417 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.734766 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.735444 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.736545 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.855990 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+I, [2013-11-20T10:06:57.856854 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:57.858376 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (0.8ms)
+I, [2013-11-20T10:06:57.858864 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.0ms)
+I, [2013-11-20T10:06:57.859916 #3683]  INFO -- :   Rendered layouts/_header.html.erb (0.9ms)
+I, [2013-11-20T10:06:57.860146 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2013-11-20T10:06:57.860326 #3683]  INFO -- : Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+I, [2013-11-20T10:06:57.979046 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.980006 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.981168 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.982462 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:57.983190 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:57 +0800
+F, [2013-11-20T10:06:57.984287 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:58.014106 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:58 +0800
+F, [2013-11-20T10:06:58.015313 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:58.117399 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:06:58 +0800
+I, [2013-11-20T10:06:58.119321 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:06:58.124786 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (3.2ms)
+I, [2013-11-20T10:06:58.126507 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.1ms)
+I, [2013-11-20T10:06:58.129271 #3683]  INFO -- :   Rendered layouts/_header.html.erb (2.4ms)
+I, [2013-11-20T10:06:58.129537 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.1ms)
+I, [2013-11-20T10:06:58.129738 #3683]  INFO -- : Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+I, [2013-11-20T10:06:58.213195 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:06:58 +0800
+F, [2013-11-20T10:06:58.216359 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:58.217331 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:06:58 +0800
+F, [2013-11-20T10:06:58.218705 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:06:58.219519 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:06:58 +0800
+F, [2013-11-20T10:06:58.220816 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:07:04.805550 #3683]  INFO -- : Started GET "/signin" for 127.0.0.1 at 2013-11-20 10:07:04 +0800
+I, [2013-11-20T10:07:04.807789 #3683]  INFO -- : Processing by SessionsController#new as HTML
+I, [2013-11-20T10:07:04.813129 #3683]  INFO -- :   Rendered sessions/new.html.erb within layouts/application (2.9ms)
+I, [2013-11-20T10:07:04.814950 #3683]  INFO -- :   Rendered layouts/_shim.html.erb (0.1ms)
+I, [2013-11-20T10:07:04.819540 #3683]  INFO -- :   Rendered layouts/_header.html.erb (4.0ms)
+I, [2013-11-20T10:07:04.820472 #3683]  INFO -- :   Rendered layouts/_footer.html.erb (0.2ms)
+I, [2013-11-20T10:07:04.821210 #3683]  INFO -- : Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.7ms)
+I, [2013-11-20T10:07:04.944996 #3683]  INFO -- : Started GET "/assets/application-f1a14051f17824976271b9c0460232f0.css" for 127.0.0.1 at 2013-11-20 10:07:04 +0800
+F, [2013-11-20T10:07:04.948339 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-f1a14051f17824976271b9c0460232f0.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:07:04.949408 #3683]  INFO -- : Started GET "/assets/application-853202ea2b5235dd9da97af417c52595.js" for 127.0.0.1 at 2013-11-20 10:07:04 +0800
+F, [2013-11-20T10:07:04.951181 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-853202ea2b5235dd9da97af417c52595.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+I, [2013-11-20T10:07:04.952269 #3683]  INFO -- : Started GET "/images/Tusita-header.jpg" for 127.0.0.1 at 2013-11-20 10:07:04 +0800
+F, [2013-11-20T10:07:04.954096 #3683] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/Tusita-header.jpg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/aska/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+

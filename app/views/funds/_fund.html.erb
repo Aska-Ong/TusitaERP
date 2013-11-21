@@ -1,0 +1,12 @@
+<li>
+  <div class="float-left"><%= form_for :temp, :method => "get", :url => expenses_path do |f| %><%= f.button fund.type+" Fund",name: "where_action", value: fund.id , :class => 'button-to-link' %> : <%= fund.amount %><% end %> 
+  <div>Total Expenses: <%= Expense.where(:fund_id => fund.id).sum(:amount)%></div>
+  <div>Balance: <%= fund.amount - Expense.where(:fund_id => fund.id).sum(:amount)%></div>
+  </div>
+  <div class="float-right"><%= link_to "Edit", edit_fund_path(Fund.find(fund.id)),:class => 'btn btn-primary'%>
+  <%= link_to "Delete", fund, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
+  </div>
+</li>
+
+
