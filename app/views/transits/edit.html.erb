@@ -1,0 +1,23 @@
+<% provide(:title, 'Edit Transit Record') %>
+<h1>Edit Transit Record</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for (@transit) do |f| %>
+  <%= render 'shared/transit_error' %>
+      <%= f.input :passenger_name %>
+
+      <%= f.input :date_departure %>
+
+      <%= f.input :date_arrival %>
+
+	  <%= f.input :sector %>
+
+	  <%= f.input :flight_no %>
+
+	  <%= f.input :terminal %>
+
+      <%= f.submit 'Save changes', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

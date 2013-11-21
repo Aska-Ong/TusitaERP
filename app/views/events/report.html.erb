@@ -1,0 +1,25 @@
+<% provide(:title, 'Event Reports') %>
+<h1>Event Reports</h1>
+<div class="row">
+<div class="span6 offset3">
+<%= simple_form_for :temp, :method => "get", :url => event_path do |f| %>
+<% @events = Event.all %>
+<%= f.input :event_id,collection:@events %>
+<%= f.submit 'Generate Report', class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>
+
+<div id="my_id4">
+<%= if !params[:temp].blank? 
+ high_chart("my_id4", @chart) do |c| 
+          raw "options.tooltip.formatter = function() {return '<b>'+ this.point.name +'</b>: '+ this.y +' %';}"  
+          raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  
+end 
+end %>
+</div>
+
+
+
+
+

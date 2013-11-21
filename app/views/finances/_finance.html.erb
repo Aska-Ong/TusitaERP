@@ -1,0 +1,8 @@
+<li>
+  <p>Description: <%= finance.description %></p>
+  <p>Donation Amount: <%= finance.amount %></p>
+  <p>Date: <%= finance.date %></p>
+  <%= link_to "Edit", edit_finance_path(Finance.find(finance.id)),:class => 'btn btn-primary'%>
+  <%= link_to "Delete", finance, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
+</li>

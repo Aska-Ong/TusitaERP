@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date: 2013-11-20
+  signed_up: 1
+  attended: 1
+  total: 1
+
+two:
+  name: MyString
+  date: 2013-11-20
+  signed_up: 1
+  attended: 1
+  total: 1

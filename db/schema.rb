@@ -11,7 +11,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106070235) do
+ActiveRecord::Schema.define(version: 20131119173217) do
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.date     "date"
+    t.integer  "signed_up"
+    t.integer  "attended"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "expenses", force: true do |t|
+    t.decimal  "amount"
+    t.date     "date"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "fund_id"
+  end
+
+  create_table "finances", force: true do |t|
+    t.decimal  "amount"
+    t.date     "date"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "funds", force: true do |t|
+    t.string   "type"
+    t.decimal  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "members", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "contact_number"
+  end
+
+  create_table "transits", force: true do |t|
+    t.string   "passenger_name"
+    t.date     "date_departure"
+    t.date     "date_arrival"
+    t.string   "sector"
+    t.string   "flight_no"
+    t.string   "terminal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transports", force: true do |t|
+    t.integer  "transit_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"

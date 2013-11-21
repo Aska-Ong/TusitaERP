@@ -48,6 +48,10 @@ gem 'devise'
 gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+gem 'lazy_high_charts'
+gem 'googlecharts'
 
 group :development do
   gem 'hub', :require=>nil

@@ -1,3 +1,11 @@
+$navbarBackground:                #356aa0 ;
+$navbarBackgroundHighlight:       #356aa0 ;
+$navbarText:                      #ffffff ;
+$navbarLinkColor:                 #ffffff ;
+$navbarLinkColorHover:            #ffffff ;
+$navbarLinkColorActive:           #ffffff ;
+$navbarLinkBackgroundHover:       #2F5D8D ;
+
 @import "bootstrap";
 
 /* mixins, variables, etc. */
@@ -17,7 +25,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 section {
@@ -49,7 +57,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -68,9 +76,9 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
   color: white;
   text-transform: uppercase;
+  font-size: 1.3em;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -81,6 +89,23 @@ p {
   }
 }
 
+.splash{
+  margin-bottom:2em;
+  padding:2em 0 2em;
+  align:center;
+  background: rgb(240,249,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,249,255,1)), color-stop(47%,rgba(203,235,255,1)), color-stop(100%,rgba(161,219,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+}
+
+.navbar{
+  font-size: 1.2em;
+}
 /* footer */
 
 footer {
@@ -95,6 +120,7 @@ footer {
     }
   }
   small {
+    font-size: 1.1em;
     float: left;
   }
   ul {
@@ -115,31 +141,6 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
-}
-
-/* sidebar */
-
-aside {
-  section {
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
 }
 
 /* forms */
@@ -168,12 +169,13 @@ input {
   @extend .error;
 }
 
-/* Users index */
+/* index */
 
-.users {
+.finances, .funds, .expenses, .transits, .transports {
   list-style: none;
   margin: 0;
   li {
+    font-size: 1.3em;
     overflow: auto;
     padding: 10px 0;
     border-top: 1px solid $grayLighter;
@@ -182,3 +184,21 @@ input {
     }
   }
 }
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.button-to-link {
+  font-size:1.0em;
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+

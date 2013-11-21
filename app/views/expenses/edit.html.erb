@@ -1,0 +1,19 @@
+<% provide(:title, 'Edit Expense Record') %>
+<h1>Edit Expense Record</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for (@expense) do |f| %>
+  <%= render 'shared/expense_error' %>
+      <%= f.hidden_field :fund_id , label: 'Expense Type' %>
+
+      <%= f.input :amount, label: 'Expense Amount' %>
+
+      <%= f.input :description, label: 'Expense Description' %>
+
+      <%= f.input :date, label: 'Date' %>
+
+      <%= f.submit 'Save changes', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

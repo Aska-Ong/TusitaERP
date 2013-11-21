@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  passenger_name: MyString
+  date_departure: 2013-11-18
+  date_arrival: 2013-11-18
+  sector: MyString
+  flight_no: MyString
+  terminal: MyString
+
+two:
+  passenger_name: MyString
+  date_departure: 2013-11-18
+  date_arrival: 2013-11-18
+  sector: MyString
+  flight_no: MyString
+  terminal: MyString
