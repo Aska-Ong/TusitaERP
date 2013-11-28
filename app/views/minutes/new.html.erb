@@ -1,0 +1,17 @@
+<% provide(:title, 'Create New Meeting Minute Record') %>
+<h1><%= t('views.create_new_meeting_minute_record') %></h1>
+
+<div class="row">
+  <div class="span12 offset0">
+    <%= simple_form_for (@minute) do |f| %>
+	<%= render 'shared/minute_error' %>
+      <%= f.input :name %>
+
+      <%= f.input :date %>
+
+      <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'} } %>
+
+      <%= f.submit t('views.create_record'), class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

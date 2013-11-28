@@ -1,0 +1,8 @@
+<% provide(:title, @minute.name) %>
+<div class="row">
+  <div class="span6">
+        <p>Name: <%= @minute.name %></p>
+		<p>Date: <%= @minute.date %></p>
+  		<p>Content: <%= simple_format(@minute.content, {class: "minute_content"}, sanitize: false) %></p>
+  </div>
+</div>
