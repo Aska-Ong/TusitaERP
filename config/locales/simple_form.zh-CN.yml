@@ -9,4 +9,13 @@ zh-CN:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "很抱歉，請您再檢查一下："
+      default_message: "很抱歉，请您再检查一下："
+    labels:
+      defaults:
+        name: 名字
+        date: 日期
+        content:  内容
+        username: 用户名
+        password: 密码
+        password_confirmation:  确认密码
+        event_id:  活动

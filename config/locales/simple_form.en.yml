@@ -23,4 +23,12 @@ en:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
-
+    labels:
+      defaults:
+        name: Name
+        date: Date
+        content:  Content
+        username: Username
+        password: Password
+        password_confirmation:  Password Confirmation
+        event_id:  Event

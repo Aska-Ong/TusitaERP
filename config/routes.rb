@@ -1,5 +1,6 @@
 TusitaERP::Application.routes.draw do
   scope "(:locale)", :locale => /en|zh-TW|zh-CN/ do 
+  resources :minutes
   resources :transits
   resources :transports
   resources :expenses

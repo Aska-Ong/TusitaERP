@@ -21,3 +21,27 @@
 
 en:
   hello: "Hello world"
+  views:
+    home: Home
+    finance:  Finance
+    event:  Event
+    transit:  Transit
+    transport:  Transport
+    meeting:  Meeting
+    account:  Account
+    manage_transit: Manage Transit
+    manage_transport: Manage Transport
+    meeting_minutes:  Meeting Minutes
+    create_new_account: Create New Account
+    create_account:	Create Account
+    profile:  Profile
+    update_your_account:	Update Your Account
+    update_account:	Update Account
+    account_settings: Account Settings
+    sign_out: Sign Out
+    generate_report:  Generate Report
+    event_reports: Event Reports
+    all_meeting_minute_records: All Meeting Minute Records
+    add_meeting_minute_record: Add Meeting Minute Record
+    create_record: Create Record
+    create_new_meeting_minute_record:   Create New Meeting Minute Record
