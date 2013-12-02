@@ -5,6 +5,8 @@ class Fund < ActiveRecord::Base
 	validates :amount,presence: true, numericality: {greater_than_or_equal_to:0}
 	validate :value_of_amount_on_update, on: :update
 	validate :value_of_amount_on_create, on: :create
+	
+	attr_accessible :type,:amount
 
 	def value_of_amount_on_update
 		balance = Finance.sum(:amount) - Fund.sum(:amount)

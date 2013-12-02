@@ -7,6 +7,8 @@ class Expense < ActiveRecord::Base
 	validate :value_of_amount_on_update, on: :update
 	validate :value_of_amount_on_create, on: :create
 
+	attr_accessible :amount,:date,:description,:fund_id
+
 	def value_of_amount_on_update
 		balance = Fund.where(:id => self.fund_id).sum(:amount) - Expense.where(:fund_id => self.fund_id).sum(:amount)
 		allow_amount = Expense.find(self.id).amount + balance

@@ -6,4 +6,6 @@ class Transit < ActiveRecord::Base
 	validates :sector, presence: true
 	validates :flight_no, presence: true
 	validates :terminal, presence: true
+
+	attr_accessible :passenger_name,:date_departure,:date_arrival,:sector,:flight_no,:terminal
 end

@@ -18,5 +18,5 @@
 //= require highcharts/highcharts                                                           
 //= require highcharts/highcharts-more                                                         
 //= require highcharts/highstock
+//= require ckeditor/override
 //= require ckeditor/init
-
