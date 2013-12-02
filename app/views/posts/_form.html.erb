@@ -1,11 +1,11 @@
+<%= form_for [@topic, @post] do |f| %>
+<% if @post.errors.any? %>
+  <% flash.now[:error] = @post.errors.full_messages.join(', and ') %>
+<% end %>
 <div class="module">
   <div class="module_header"><%= action_name.humanize %> Post</div>
     <div class="module_subheader smaller"></div>
     <div class="module_body">
-      <%= form_for [@topic, @post] do |f| %>
-      <% if @post.errors.any? %>
-        <% flash.now[:error] = @post.errors.full_messages.join(', and ') %>
-      <% end %>
       <div class="fieldset">
         <span>
           <%= f.label :body %>

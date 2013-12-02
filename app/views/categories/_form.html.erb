@@ -1,11 +1,11 @@
+<%= form_for @category do |f| %>
+<% if @category.errors.any? %>
+  <% flash.now[:error] = @category.errors.full_messages.join(', and ') %>
+<% end %>
 <div class="module">
   <div class="module_header"><%= action_name.humanize %> Category</div>
     <div class="module_subheader smaller"></div>
     <div class="module_body">
-      <%= form_for @category do |f| %>
-      <% if @category.errors.any? %>
-        <% flash.now[:error] = @category.errors.full_messages.join(', and ') %>
-      <% end %>
       <div class="fieldset">
         <span>
           <%= f.label :title %>
