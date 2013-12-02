@@ -37,23 +37,16 @@
                 <li><%= link_to t('views.manage_transport'), transports_path%></li>
               </ul>
             </li>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= t('views.meeting') %><b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to t('views.meeting_minutes'), minutes_path%></li>
-                <li><%= link_to image_tag("hangout.png"), "https://plus.google.com/", :target => "_blank" %></li>
-              </ul>
-            </li>
+            <li><%= link_to t('views.forum'), forums_path%></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <%= t('views.account') %><b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to t('views.create_new_account'), signup_path %></li>
-                <li><%= link_to t('views.profile'), current_user %></li>
                 <li><%= link_to t('views.account_settings'), edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to image_tag("hangout.png"), "https://plus.google.com/", :target => "_blank" %></li>
                 <li class="divider"></li>
                 <li>
                     <%= link_to "English", :locale => 'en' %>

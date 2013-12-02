@@ -28,6 +28,7 @@ en:
     transit:  Transit
     transport:  Transport
     meeting:  Meeting
+    forum: Forum
     account:  Account
     manage_transit: Manage Transit
     manage_transport: Manage Transport

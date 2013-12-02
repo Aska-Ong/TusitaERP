@@ -50,6 +50,9 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'lazy_high_charts'
 gem 'googlecharts'
 gem 'ckeditor'
+gem 'forum_monster'
+gem 'protected_attributes'
+gem 'rinku', :require => 'rails_rinku'
 
 group :development do
   gem 'hub', :require=>nil

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :topics, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
 	before_save { self.username = username.downcase }
 	before_create :create_remember_token
 	validates :username,  presence: true, length: { maximum: 20 }, uniqueness: {case_sensitive: false}
