@@ -1407,3 +1407,12 @@ ActionController::RoutingError (No route matches [GET] "/assets/Tusita-header-6d
   C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
+I, [2013-12-03T03:11:33.611488 #10928]  INFO -- : Started GET "/forums/3/topics/new?locale=en" for 127.0.0.1 at 2013-12-03 03:11:33 +0800
+I, [2013-12-03T03:11:33.638489 #10928]  INFO -- : Processing by TopicsController#new as HTML
+I, [2013-12-03T03:11:33.638489 #10928]  INFO -- :   Parameters: {"locale"=>"en", "forum_id"=>"3"}
+I, [2013-12-03T03:11:33.658490 #10928]  INFO -- : Completed 500 Internal Server Error in 18ms
+F, [2013-12-03T03:11:33.661490 #10928] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'forums'):
+  app/controllers/topics_controller.rb:8:in `new'
+
+
