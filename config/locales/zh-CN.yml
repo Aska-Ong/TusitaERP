@@ -230,3 +230,7 @@ zh-CN:
     create_record: 添加记录
     create_new_meeting_minute_record:   添加会议纪要
     forum: 论坛
+    inventory: 库存
+    branches: 分支
+    items: 物品
+    stocks: 存货

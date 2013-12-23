@@ -1,0 +1,8 @@
+
+<tr>
+  <td><%= Branch.find(stock.branch_id).name %></td>
+  <td><%= Item.find(stock.item_id).name %></td>
+  <td><%= stock.count %></td>
+  <td><%= link_to "Delete", stock, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>

@@ -1,0 +1,10 @@
+<% provide(:title, 'All Branch') %>
+<h1>All Branch</h1>
+<p><%= link_to "Add Branch", new_branch_path ,:class => 'btn btn-primary'%></p>
+
+<%= will_paginate %>
+<ul class="branches">
+    <%= render @branches %>
+</ul>
+
+<%= will_paginate %>

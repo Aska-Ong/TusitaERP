@@ -1,0 +1,62 @@
+<% provide(:title, 'Stocks list') %>
+<h1>Stocks List</h1>
+<p><%= link_to "Add Stock", new_stock_path ,:class => 'btn btn-primary'%></p>
+
+<%= simple_form_for :temp, :method => "get", :url => stocks_path do |f| %>
+<%= f.input :branch_id,collection: Branch.all %>
+<%= f.input :item_id,collection: Item.all %>
+<%= f.submit 'Show list', class: "btn btn-large btn-primary" %>
+<% end %>
+
+<% if !params[:temp].blank?
+	if !params[:temp][:branch_id].blank? && !params[:temp][:item_id].blank? %>
+		
+	<% @stocks = Stock.where({item_id: params[:temp][:item_id],branch_id: params[:temp][:branch_id]}) %>
+	<table class="stocks">
+	<tr>
+	<th>Branch</th>
+	<th>Item</th>
+	<th>Count</th>
+	<th>Operation</th>
+	</tr>
+	<ul>
+    <%= render @stocks %>
+	</ul>
+	</table>
+
+	<% else 
+		if !params[:temp][:item_id].blank? %>
+	   
+
+	   <% @stocks = Stock.where({item_id: params[:temp][:item_id]}) %>
+		<table class="stocks">
+		<tr>
+		<th>Branch</th>
+		<th>Item</th>
+		<th>Count</th>
+		<th>Operation</th>
+		</tr>
+		<ul>
+    		<%= render @stocks %>
+		</ul>
+		</table>
+		
+	<% else
+		if !params[:temp][:branch_id].blank? %>
+
+		<% @stocks = Stock.where({branch_id: params[:temp][:branch_id]}) %>
+		<table class="stocks">
+		<tr>
+		<th>Branch</th>
+		<th>Item</th>
+		<th>Count</th>
+		<th>Operation</th>
+		</tr>
+		<ul>
+    		<%= render @stocks %>
+		</ul>
+		</table>
+	<% end
+end
+end 
+end %>

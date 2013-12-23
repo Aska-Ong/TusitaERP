@@ -1,4 +1,9 @@
 TusitaERP::Application.routes.draw do
+  scope "(:locale)", :locale => /en|zh-TW|zh-CN/ do 
+  match '/stocks/input', to: 'stocks#input', via: 'get'
+  resources :stocks
+  resources :items
+  resources :branches
   resources :categories, :except => [:index, :show]
   resources :forums, :except => :index do
     resources :topics, :shallow => true, :except => :index do
@@ -6,7 +11,6 @@ TusitaERP::Application.routes.draw do
     end
     root :to => 'categories#index', :via => :get
   end
-  scope "(:locale)", :locale => /en|zh-TW|zh-CN/ do 
   resources :minutes
   resources :transits
   resources :transports

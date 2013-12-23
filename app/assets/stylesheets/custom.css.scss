@@ -171,13 +171,27 @@ input {
 
 /* index */
 
-.finances, .funds, .expenses, .transits, .transports, .minutes {
+.finances, .funds, .expenses, .transits, .transports, .minutes, .branches, .items, .stocks{
   list-style: none;
   margin: 0;
   li {
     font-size: 1.3em;
     overflow: auto;
     padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+.stocks {
+  list-style: none;
+  margin: 0;
+  tr,th {
+    font-size: 1.3em;
+    overflow: auto;
+    text-align: center;
     border-top: 1px solid $grayLighter;
     &:last-child {
       border-bottom: 1px solid $grayLighter;

@@ -1,0 +1,6 @@
+<li>
+  <p>Description: <%= branch.name %></p>
+  <%= link_to "Edit", edit_branch_path(Branch.find(branch.id)),:class => 'btn btn-primary'%>
+  <%= link_to "Delete", branch, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
+</li>

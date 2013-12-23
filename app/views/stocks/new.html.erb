@@ -1,0 +1,15 @@
+<% provide(:title, 'Create New Stock') %>
+<h1>Create New Stock</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for (@stock) do |f| %>
+	<%= render 'shared/stock_error' %>
+	  <%= f.association :branch, include_blank: false %>
+	  <%= f.association :item, include_blank: false %>
+      <%= f.input :count %>
+
+      <%= f.submit 'Create Stock', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
