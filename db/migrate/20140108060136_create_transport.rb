@@ -1,4 +1,4 @@
-class CreateTransport < ActiveRecord::Migration
+class CreateTransporttemp < ActiveRecord::Migration
   def change
     create_table :transports do |t|
       t.string :name
