@@ -1,8 +1,10 @@
-<% provide(:title, @transport.transit_id) %>
+<% provide(:title, @transport.name) %>
 <div class="row">
-  <aside class="span4">
-  		<p>Transit: <%= transport.transit_id %></p>
-  		<p>Name: <%= transport.name %></p>
+  <aside class="col-md-4">
+    <section>
+      <p>Name: <%= @transport.name %></p>
+  		<p>Email <%= @transport.email %></p>
+  		<p>Contact Number: <%= @transport.contact_number %></p>
     </section>
   </aside>
 </div>

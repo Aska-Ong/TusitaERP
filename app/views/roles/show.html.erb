@@ -1,0 +1,12 @@
+<% provide(:title, @role.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+        <p>Name: <%= @role.name %></p>
+        <p>Inventory: <%= @role.inventory.to_s %></p>
+        <p>Event: <%= @role.event.to_s %></p>
+        <p>Transit: <%= @role.transit.to_s %></p>
+        <p>Forum: <%= @role.forum.to_s %></p>
+    </section>
+  </aside>
+</div>

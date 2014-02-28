@@ -1,13 +1,14 @@
-<% provide(:title, @transit.passenger_name) %>
+<% provide(:title, @transit.id) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="col-md-4">
     <section>
-      <p>Passenger Name: <%= transit.passenger_name %></p>
-  		<p>Departure Date: <%= transit.date_departure %></p>
-  		<p>Arrival Date: <%= transit.date_arrival %></p>
-  		<p>Sector: <%= transit.sector %></p>
-  		<p>Flight Number: <%= transit.flight_no %></p>
-  		<p>Terminal: <%= transit.terminal %></p>
+      <p>Date: <%= @transit.date %></p>
+  <p>Time: <%= @transit.time %></p>
+  <p>Flight Number: <%= @transit.flight_no %></p>
+  <p>Food: <%= @transit.food.to_s %></p>
+  <p>Transportation: <%= @transit.transportation.to_s %></p>
+  <p>Accommodation: <%= @transit.accommodation.to_s %></p>
+  <p>Transit Status: <%= @transit.status.to_s %></p>
     </section>
   </aside>
 </div>

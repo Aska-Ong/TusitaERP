@@ -1,4 +1,4 @@
-<%= form_for [@topic, @post] do |f| %>
+<%= bootstrap_form_for [@topic, @post] do |f| %>
 <% if @post.errors.any? %>
   <% flash.now[:error] = @post.errors.full_messages.join(', and ') %>
 <% end %>

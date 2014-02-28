@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206024852) do
+ActiveRecord::Schema.define(version: 20140228081737) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -27,28 +27,18 @@ ActiveRecord::Schema.define(version: 20131206024852) do
     t.datetime "updated_at"
   end
 
+  create_table "categoryroles", force: true do |t|
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "role_id"
+  end
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.date     "date"
     t.integer  "signed_up"
     t.integer  "attended"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "expenses", force: true do |t|
-    t.decimal  "amount"
-    t.date     "date"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "fund_id"
-  end
-
-  create_table "finances", force: true do |t|
-    t.decimal  "amount"
-    t.date     "date"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,13 +55,6 @@ ActiveRecord::Schema.define(version: 20131206024852) do
     t.datetime "updated_at"
   end
 
-  create_table "funds", force: true do |t|
-    t.string   "type"
-    t.decimal  "amount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "items", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -83,15 +66,7 @@ ActiveRecord::Schema.define(version: 20131206024852) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "contact_number"
-  end
-
-  create_table "minutes", force: true do |t|
-    t.string   "content"
-    t.date     "date"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "contact_number"
   end
 
   create_table "posts", force: true do |t|
@@ -101,6 +76,16 @@ ActiveRecord::Schema.define(version: 20131206024852) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "inventory"
+    t.boolean  "event"
+    t.boolean  "transit"
+    t.boolean  "forum"
   end
 
   create_table "stocks", force: true do |t|
@@ -123,20 +108,43 @@ ActiveRecord::Schema.define(version: 20131206024852) do
     t.datetime "updated_at"
   end
 
+  create_table "transitrecords", force: true do |t|
+    t.integer  "transit_id"
+    t.integer  "member_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "transits", force: true do |t|
-    t.string   "passenger_name"
-    t.date     "date_departure"
-    t.date     "date_arrival"
-    t.string   "sector"
     t.string   "flight_no"
-    t.string   "terminal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "status"
+    t.date     "date"
+    t.time     "time"
+    t.boolean  "food"
+    t.boolean  "transportation"
+    t.boolean  "accommodation"
+  end
+
+  create_table "transportrecords", force: true do |t|
+    t.integer  "transit_id"
+    t.integer  "transport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "transports", force: true do |t|
-    t.integer  "transit_id"
     t.string   "name"
+    t.string   "email"
+    t.string   "contact_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "userroles", force: true do |t|
+    t.integer  "role_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

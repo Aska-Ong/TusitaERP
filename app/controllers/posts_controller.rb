@@ -17,12 +17,15 @@ class PostsController < ApplicationController
     @post.forum = @topic.forum
     @post.user = current_user
     
+    respond_to do |format|
     if @post.save
-      flash[:notice] = "Post was successfully created."
-      redirect_to topic_path(@post.topic)
+        format.html{flash[:notice] = "Post was successfully created."
+        redirect_to topic_path(@post.topic)}
+        format.js
     else
       render :action => 'new'
     end
+  end
   end
   
   def edit
@@ -32,10 +35,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
+  respond_to do |format|
     if @post.update_attributes(params[:post])
-      flash[:notice] = "Post was successfully updated."
-      redirect_to topic_path(@post.topic)
+      format.html{flash[:notice] = "Post was successfully updated."
+      redirect_to topic_path(@post.topic)}
+      format.js
     end
+  end
   end
   
   def destroy

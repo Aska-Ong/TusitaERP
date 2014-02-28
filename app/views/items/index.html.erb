@@ -4,7 +4,14 @@
 
 <%= will_paginate %>
 <ul class="items">
+<table>
+<tr>
+<th class="accth">Description</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
     <%= render @items %>
+</table>
 </ul>
 
 <%= will_paginate %>

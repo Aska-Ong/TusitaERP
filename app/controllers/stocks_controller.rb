@@ -1,5 +1,7 @@
 class StocksController < ApplicationController
 before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show, :new, :create]
+add_breadcrumb "Home", :root_path
+add_breadcrumb "Stock", :stocks_path
 
   def index
     @stocks = Stock.paginate(page: params[:page])
@@ -7,10 +9,12 @@ before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show, :
 
   def show
     @stock = Stock.find(params[:id])
+    add_breadcrumb "Stocks Details"
   end
 
   def new
   	@stock = Stock.new
+    add_breadcrumb "New Stock", :new_stock_path
   end
 
   def edit

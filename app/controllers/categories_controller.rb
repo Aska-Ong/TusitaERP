@@ -1,10 +1,14 @@
-class CategoriesController < ApplicationController  
+class CategoriesController < ApplicationController
+add_breadcrumb "Home", :root_path
+add_breadcrumb "Forum", :forums_path
+
   def index
     @categories = Category.all
   end
   
   def new
     @category = Category.new
+    add_breadcrumb "New Category", :new_category_path
   end
   
   def create
@@ -20,6 +24,7 @@ class CategoriesController < ApplicationController
   
   def edit
     @category = Category.find(params[:id])
+    add_breadcrumb "Edit Category"
   end
   
   def update

@@ -1,0 +1,10 @@
+<tr>
+  <td><%= role.name %></td>
+  <td><%= role.inventory.to_s %></td>
+  <td><%= role.event.to_s %></td>
+  <td><%= role.transit.to_s %></td>
+  <td><%= role.forum.to_s %></td>
+  <td><%= link_to "Edit", edit_role_path(Role.find(role.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", role, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>

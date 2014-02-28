@@ -1,4 +1,7 @@
-class TopicsController < ApplicationController  
+class TopicsController < ApplicationController
+add_breadcrumb "Home", :root_path
+add_breadcrumb "Forum", :forums_path
+
   def show
     @topic = Topic.find(params[:id])
     @topic.hit! if @topic
@@ -14,12 +17,15 @@ class TopicsController < ApplicationController
     @topic = @forum.topics.build(params[:topic])
     @topic.user = current_user
     
+    respond_to do |format|
     if @topic.save
-      flash[:notice] = "Topic was successfully created."
-      redirect_to topic_url(@topic)
+      format.html{flash[:notice] = "Topic was successfully created."
+      redirect_to topic_url(@topic)}
+      format.js
     else
       render :action => 'new'
     end
+  end
   end
   
   def edit

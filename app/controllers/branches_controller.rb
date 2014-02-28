@@ -1,5 +1,7 @@
 class BranchesController < ApplicationController
 before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show, :new, :create]
+add_breadcrumb "Home", :root_path
+add_breadcrumb "Branch", :branches_path
 
   def index
     @branches = Branch.paginate(page: params[:page])
@@ -7,14 +9,17 @@ before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show, :
 
   def show
     @branch = Branch.find(params[:id])
+    add_breadcrumb "Branch Details"
   end
 
   def new
   	@branch = Branch.new
+    add_breadcrumb "New Branch", :new_branch_path
   end
 
   def edit
     @branch = Branch.find(params[:id])
+    add_breadcrumb "Edit Branch"
   end
 
   def update

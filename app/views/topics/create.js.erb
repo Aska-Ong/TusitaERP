@@ -1,0 +1,2 @@
+<% @post = Post.where(:topic_id => @topic.id).first %>
+window.location = '<%= edit_post_path(@post) %>';

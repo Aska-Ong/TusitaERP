@@ -1,1 +1,26 @@
-<%= render :partial => 'form' %>
+<%= bootstrap_form_for [@topic, @post] do |f| %>
+<% if @post.errors.any? %>
+  <% flash.now[:error] = @post.errors.full_messages.join(', and ') %>
+<% end %>
+<div class="module">
+  <div class="module_header"><%= action_name.humanize %> Post</div>
+    <div class="module_subheader smaller"></div>
+    <div class="module_body">
+      <div class="fieldset">
+        <span>
+          <%= f.label :body %>
+          <small>(Required)</small>
+        </span>
+        <%= f.cktext_area :body, :cols => 60, :rows => 15 %>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <%= f.hidden_field :id %>
+    <div class="module_footer">
+      <div class="fieldset">
+        <span><%= f.submit "Submit",:class => 'btn btn-primary' %> or <%= link_to "Cancel", @post.topic ,:class => 'btn btn-primary' %></span>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <% end %>
+</div>

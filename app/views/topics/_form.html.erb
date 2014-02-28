@@ -1,4 +1,4 @@
-<%= form_for [@forum, @topic] do |f| %>
+<%= bootstrap_form_for [@forum, @topic] do |f| %>
 <% if @topic.errors.any? %>
   <% flash.now[:error] = @topic.errors.full_messages.join(', and ') %>
 <% end %>
@@ -7,10 +7,6 @@
     <div class="module_subheader smaller"></div>
     <div class="module_body">
       <div class="fieldset">
-        <span>
-          <%= f.label :title %>
-          <small>(Required)</small>
-        </span>
         <span><%= f.text_field :title, :size => 75 %></span>
         <div class="clear"></div>
       </div>
@@ -27,7 +23,7 @@
     <% end %>
     <div class="module_footer">
       <div class="fieldset">
-        <span><%= f.submit "Submit",:class => 'btn btn-primary' %> or <%= link_to "Cancel", @topic.nil? ?  topic_url(@topic.id) : @forum,:class => 'btn btn-primary' %></span>
+        <span><%= f.submit "Submit",:class => 'btn btn-primary' %> or <%= link_to "Cancel", @forum,:class => 'btn btn-primary' %></span>
         <div class="clear"></div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <% provide(:title, 'Stocks list') %>
 <h1>Stocks List</h1>
+
 <p><%= link_to "Add Stock", new_stock_path ,:class => 'btn btn-primary'%></p>
 
 <%= simple_form_for :temp, :method => "get", :url => stocks_path do |f| %>
@@ -14,10 +15,10 @@
 	<% @stocks = Stock.where({item_id: params[:temp][:item_id],branch_id: params[:temp][:branch_id]}) %>
 	<table class="stocks">
 	<tr>
-	<th>Branch</th>
-	<th>Item</th>
-	<th>Count</th>
-	<th>Operation</th>
+	<th class="accth">Branch</th>
+	<th class="accth">Item</th>
+	<th class="accth">Count</th>
+	<th class="accth">Operation</th>
 	</tr>
 	<ul>
     <%= render @stocks %>
@@ -31,10 +32,10 @@
 	   <% @stocks = Stock.where({item_id: params[:temp][:item_id]}) %>
 		<table class="stocks">
 		<tr>
-		<th>Branch</th>
-		<th>Item</th>
-		<th>Count</th>
-		<th>Operation</th>
+		<th class="accth">Branch</th>
+		<th class="accth">Item</th>
+		<th class="accth">Count</th>
+		<th class="accth">Operation</th>
 		</tr>
 		<ul>
     		<%= render @stocks %>
@@ -47,10 +48,10 @@
 		<% @stocks = Stock.where({branch_id: params[:temp][:branch_id]}) %>
 		<table class="stocks">
 		<tr>
-		<th>Branch</th>
-		<th>Item</th>
-		<th>Count</th>
-		<th>Operation</th>
+		<th class="accth">Branch</th>
+		<th class="accth">Item</th>
+		<th class="accth">Count</th>
+		<th class="accth">Operation</th>
 		</tr>
 		<ul>
     		<%= render @stocks %>

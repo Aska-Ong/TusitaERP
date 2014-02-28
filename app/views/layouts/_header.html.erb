@@ -1,33 +1,29 @@
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
+<header class="navbar navbar-default navbar-fixed-top">
     <div class="container">
+    <div class="navbar-header">
     <% if signed_in? %>
       <%= link_to "Tusita ERP", root_path, id: "logo" %>
     <% else %>
       <%= link_to "Tusita ERP", signin_path, id: "logo" %>
     <% end %>
+    </div>
       <nav>
-        <ul class="nav pull-right">
+        <ul class="nav navbar-nav pull-right">
           <% if signed_in? %>
             <li><%= link_to t('views.home'), root_path %></li>
-             <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= t('views.finance') %><b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Donation Records", finances_path %></li>
-                <li><%= link_to "Funds", funds_path %></li>
-                <li><%= link_to "Report", report_path %></li>
-              </ul>
-            </li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <%= t('views.inventory') %><b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to t('views.branches'), branches_path %></li>
+                <li><%= link_to "Add Branch", new_branch_path %></li>
+                <li class="divider"></li>
                 <li><%= link_to t('views.items'), items_path %></li>
+                <li><%= link_to "Add Item", new_item_path %></li>
+                <li class="divider"></li>
                 <li><%= link_to t('views.stocks'), stocks_path %></li>
+                <li><%= link_to "Add Stock", new_stock_path %></li>
               </ul>
             </li>
             <li><%= link_to t('views.event'), event_path %></li>
@@ -55,6 +51,7 @@
               <ul class="dropdown-menu">
                 <li><%= link_to t('views.create_new_account'), signup_path %></li>
                 <li><%= link_to t('views.account_settings'), edit_user_path(current_user) %></li>
+                <li><%= link_to t('views.role'), roles_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to image_tag("hangout.png"), "https://plus.google.com/", :target => "_blank" %></li>
                 <li class="divider"></li>
@@ -78,11 +75,5 @@
           <% end %>
         </ul>
       </nav>
-    </div>
   </div>
 </header>
-    <div class="splash">
-      <div class="container">
-            <%= image_tag("Tusita-header.jpg") %>
-      </div>
-    </div>

@@ -14,4 +14,13 @@ class ApplicationController < ActionController::Base
   logger.debug "default_url_options is passed options: #{options.inspect}\n"
   { :locale => I18n.locale }
    end
+
+  def redirect_to(options = {}, response_status = {})
+  if request.xhr?
+    render(:update) {|page| page.redirect_to(options)}
+  else
+    super(options, response_status)
+  end
+  end
+
 end

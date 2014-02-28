@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '>= 3.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-sass-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -39,7 +40,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
@@ -53,6 +54,9 @@ gem 'ckeditor', :git => "https://github.com/galetahub/ckeditor.git"
 gem 'forum_monster'
 gem 'rinku', :require => 'rails_rinku'
 gem 'protected_attributes'
+gem 'faker'
+gem 'bootstrap-sass-extras'
+gem 'bootstrap_form'
 
 group :development do
   gem 'hub', :require=>nil

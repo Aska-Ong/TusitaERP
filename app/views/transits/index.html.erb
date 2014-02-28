@@ -1,10 +1,204 @@
 <% provide(:title, 'All Transit Records') %>
 <h1>All Transit Records</h1>
-<p><%= link_to "Add Records", new_transit_path ,:class => 'btn btn-primary'%></p>
+<p><%= link_to "Add Transit Records", new_transit_path ,:class => 'btn btn-primary'%></p>
 
-<%= will_paginate %>
+<%= simple_form_for :temp, :method => "get", :url => transits_path do |f| %>
+<%= f.input :transitstatus,collection: ["All","Pending","Completed"], label: "Transit Status", include_blank: false %>
+<%= f.submit 'Show list', class: "btn btn-large btn-primary" %>
+<% end %>
+
+<% if !params[:temp].blank?
+	if params[:temp][:transitstatus] == "Completed" %>
+		
+	<% @transits = Transit.where(:status => 1) %>
+
 <ul class="transits">
-    <%= render @transits %>
-</ul>
+<table>
+<caption><h3>Completed Transits</h3></caption>
+<tr>
+<th class="accth">Checkbox</th>
+<th class="accth">Member</th>
+<th class="accth">Date</th>
+<th class="accth">Time</th>
+<th class="accth">Flight Number</th>
+<th class="accth">Food</th>
+<th class="accth">Transportation</th>
+<th class="accth">Accommodation</th>
+<th class="accth">Transport Provider</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
+<%= form_tag pending_transits_path, :method => :put do %>
+	<% @transits.each do |transit| %>
+    <tr>
+	<td>
+    <%= check_box_tag "transit_ids[]", transit.id %>
+    </td>
+	<td>
+  <% @members = Transitrecord.where(:transit_id => transit.id).each do |t| %>
+	<p><%= Member.find(t.member_id).name %></p>
 
-<%= will_paginate %>
+<%end%>
+</td>
+  <td><%= transit.date %></td>
+  <td><%= transit.time %></td>
+  <td><%= transit.flight_no %></td>
+  <td><%= transit.food %></td>
+  <td><%= transit.transportation %></td>
+  <td><%= transit.accommodation %></td>
+<td>
+<% @transports = Transportrecord.where(:transit_id => transit.id).each do |t| %>
+<p><%= Transport.find(t.transport_id).name %></p>
+<%end%>
+</td>
+  <td><%= link_to "Edit", edit_transit_path(Transit.find(transit.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", transit, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>
+<% end %>
+</table>
+</ul>
+<%= submit_tag "Mark as Pending",:class => 'btn btn-primary' %>
+<% end %>
+
+<% elsif params[:temp][:transitstatus] == "Pending"%>
+<% @transits = Transit.where(:status => 0) %>
+<ul class="transits">
+<table>
+<caption><h3>Pending Transits</h3></caption>
+<tr>
+<th class="accth">Checkbox</th>
+<th class="accth">Member</th>
+<th class="accth">Date</th>
+<th class="accth">Time</th>
+<th class="accth">Flight Number</th>
+<th class="accth">Food</th>
+<th class="accth">Transportation</th>
+<th class="accth">Accommodation</th>
+<th class="accth">Transport Provider</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
+<%= form_tag complete_transits_path, :method => :put do %>
+	<% @transits.each do |transit| %>
+    <tr>
+	<td>
+    <%= check_box_tag "transit_ids[]", transit.id %>
+    </td>
+	<td>
+  <% @members = Transitrecord.where(:transit_id => transit.id).each do |t| %>
+	<p><%= Member.find(t.member_id).name %></p>
+
+<%end%>
+</td>
+  <td><%= transit.date %></td>
+  <td><%= transit.time %></td>
+  <td><%= transit.flight_no %></td>
+  <td><%= transit.food %></td>
+  <td><%= transit.transportation %></td>
+  <td><%= transit.accommodation %></td>
+<td>
+<% @transports = Transportrecord.where(:transit_id => transit.id).each do |t| %>
+<p><%= Transport.find(t.transport_id).name %></p>
+<%end%>
+</td>
+  <td><%= link_to "Edit", edit_transit_path(Transit.find(transit.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", transit, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>
+<% end %>
+</table>
+</ul>
+<%= submit_tag "Mark as Completed",:class => 'btn btn-primary' %>
+<% end %>
+<% elsif %>
+<% @transits = Transit.all %>
+
+<ul class="transits">
+<table>
+<caption><h3>All Transits</h3></caption>
+<tr>
+<th class="accth">Member</th>
+<th class="accth">Date</th>
+<th class="accth">Time</th>
+<th class="accth">Flight Number</th>
+<th class="accth">Food</th>
+<th class="accth">Transportation</th>
+<th class="accth">Accommodation</th>
+<th class="accth">Transport Provider</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
+	<% @transits.each do |transit| %>
+    <tr>
+	<td>
+  <% @members = Transitrecord.where(:transit_id => transit.id).each do |t| %>
+	<p><%= Member.find(t.member_id).name %></p>
+
+<%end%>
+</td>
+  <td><%= transit.date %></td>
+  <td><%= transit.time %></td>
+  <td><%= transit.flight_no %></td>
+  <td><%= transit.food %></td>
+  <td><%= transit.transportation %></td>
+  <td><%= transit.accommodation %></td>
+<td>
+<% @transports = Transportrecord.where(:transit_id => transit.id).each do |t| %>
+<p><%= Transport.find(t.transport_id).name %></p>
+<%end%>
+</td>
+  <td><%= link_to "Edit", edit_transit_path(Transit.find(transit.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", transit, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>
+<% end %>
+</table>
+</ul>
+<% end %>
+<% else %>
+<% @transits = Transit.all %>
+
+<ul class="transits">
+<table>
+<caption><h3>All Transits</h3></caption>
+<tr>
+<th class="accth">Member</th>
+<th class="accth">Date</th>
+<th class="accth">Time</th>
+<th class="accth">Flight Number</th>
+<th class="accth">Food</th>
+<th class="accth">Transportation</th>
+<th class="accth">Accommodation</th>
+<th class="accth">Transport Provider</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
+	<% @transits.each do |transit| %>
+    <tr>
+	<td>
+  <% @members = Transitrecord.where(:transit_id => transit.id).each do |t| %>
+	<p><%= Member.find(t.member_id).name %></p>
+
+<%end%>
+</td>
+  <td><%= transit.date %></td>
+  <td><%= transit.time %></td>
+  <td><%= transit.flight_no %></td>
+  <td><%= transit.food %></td>
+  <td><%= transit.transportation %></td>
+  <td><%= transit.accommodation %></td>
+<td>
+<% @transports = Transportrecord.where(:transit_id => transit.id).each do |t| %>
+<p><%= Transport.find(t.transport_id).name %></p>
+<%end%>
+</td>
+  <td><%= link_to "Edit", edit_transit_path(Transit.find(transit.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", transit, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>
+<% end %>
+</table>
+</ul>
+<%
+end%>

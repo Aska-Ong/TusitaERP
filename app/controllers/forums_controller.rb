@@ -1,10 +1,14 @@
-class ForumsController < ApplicationController    
+class ForumsController < ApplicationController
+add_breadcrumb "Home", :root_path
+add_breadcrumb "Forum", :forums_path
+
   def show
     @forum = Forum.find(params[:id])
   end
   
   def new
     @forum = Forum.new
+    add_breadcrumb "New Forum", :new_forum_path
   end
   
   def create
@@ -20,6 +24,7 @@ class ForumsController < ApplicationController
   
   def edit
     @forum = Forum.find(params[:id])
+    add_breadcrumb "Edit Forum"
   end
   
   def update

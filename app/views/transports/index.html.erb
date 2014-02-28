@@ -1,10 +1,19 @@
-<% provide(:title, 'All Transport Records') %>
-<h1>All Transport Records</h1>
-<p><%= link_to "Add Records", new_transport_path ,:class => 'btn btn-primary'%></p>
+<% provide(:title, 'All Transport Provider Details') %>
+<h1>All Transport Provider Details</h1>
+<p><%= link_to "Add Transport Provider",new_transport_path ,:class => 'btn btn-primary'%></p>
 
 <%= will_paginate %>
-<ul class="transports">
+<ul class="transport">
+<table>
+<tr>
+<th class="accth">Name</th>
+<th class="accth">Email</th>
+<th class="accth">Contact Number</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
     <%= render @transports %>
+</table>
 </ul>
 
 <%= will_paginate %>

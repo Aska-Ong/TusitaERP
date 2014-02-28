@@ -1,11 +1,26 @@
-<li>
-  <p>Passenger Name: <%= transit.passenger_name %></p>
-  <p>Departure Date: <%= transit.date_departure %></p>
-  <p>Arrival Date: <%= transit.date_arrival %></p>
-  <p>Sector: <%= transit.sector %></p>
-  <p>Flight Number: <%= transit.flight_no %></p>
-  <p>Terminal: <%= transit.terminal %></p>
-  <%= link_to "Edit", edit_transit_path(Transit.find(transit.id)),:class => 'btn btn-primary'%>
-  <%= link_to "Delete", transit, method: :delete,
-                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
-</li>
+<tr>
+<td><% form_tag complete_transits_path, :method => :put do %>
+    <%= check_box_tag "transit_id", transit.id %>
+    <% end %></td>
+<td>
+  <% @members = Transitrecord.where(:transit_id => transit.id).each do |t| %>
+<p><%= Member.find(t.member_id).name %></p>
+
+<%end%>
+</td>
+  <td><%= transit.date %></td>
+  <td><%= transit.time %></td>
+  <td><%= transit.flight_no %></td>
+  <td><%= transit.food.to_s %></td>
+  <td><%= transit.transportation.to_s %></td>
+  <td><%= transit.accommodation.to_s %></td>
+  <td><%= transit.status.to_s %></td>
+<td>
+<% @transports = Transportrecord.where(:transit_id => transit.id).each do |t| %>
+<p><%= Transport.find(t.transport_id).name %></p>
+<%end%>
+</td>
+  <td><%= link_to "Edit", edit_transit_path(Transit.find(transit.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", transit, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>

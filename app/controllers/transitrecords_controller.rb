@@ -1,0 +1,2 @@
+class TransitrecordsController < ApplicationController
+end

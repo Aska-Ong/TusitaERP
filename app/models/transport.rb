@@ -1,6 +1,10 @@
 class Transport < ActiveRecord::Base
-	validates :transit_id, presence: true
-	validates :name, presence: true
+	has_many :transportrecords
+	has_many :transits, :through => :transportrecords
 
-	attr_accessible :transit_id, :name
+	validates :name, presence: true
+	validates :email, presence: true
+	validates :contact_number, presence: true
+
+	attr_accessible :name,:email,:contact_number
 end

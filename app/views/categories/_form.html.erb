@@ -1,4 +1,4 @@
-<%= form_for @category do |f| %>
+<%= simple_form_for @category do |f| %>
 <% if @category.errors.any? %>
   <% flash.now[:error] = @category.errors.full_messages.join(', and ') %>
 <% end %>
@@ -7,11 +7,11 @@
     <div class="module_subheader smaller"></div>
     <div class="module_body">
       <div class="fieldset">
-        <span>
-          <%= f.label :title %>
-          <small>(Required)</small>
-        </span>
-        <span><%= f.text_field :title, :size => 75 %></span>
+        <span><%= f.input :title, :size => 75 %></span>
+        <div class="clear"></div>
+      </div>
+      <div class="fieldset">
+        <span><%= f.association :roles %></span>
         <div class="clear"></div>
       </div>
       <div class="fieldset">

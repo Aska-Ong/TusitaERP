@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-	belongs_to :transit
-
+	has_many :transitrecords
+	has_many :transit, :through => :transitrecords
 	attr_accessible :name,:email,:contact_number
 end

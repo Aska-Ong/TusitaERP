@@ -1,0 +1,21 @@
+<% provide(:title, 'All Roles') %>
+<h1>All Roles</h1>
+<p><%= link_to "Add Role", new_role_path ,:class => 'btn btn-primary'%></p>
+
+<%= will_paginate %>
+<ul class="roles">
+<table>
+<tr>
+<th class="accth">Description</th>
+<th class="accth">Inventory</th>
+<th class="accth">Event</th>
+<th class="accth">Transit</th>
+<th class="accth">Forum</th>
+<th class="accth">Edit</th>
+<th class="accth">Delete</th>
+</tr>
+    <%= render @roles %>
+</table>
+</ul>
+
+<%= will_paginate %>

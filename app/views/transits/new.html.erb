@@ -2,20 +2,26 @@
 <h1>Create New Transit Record</h1>
 
 <div class="row">
-  <div class="span6 offset3">
-    <%= simple_form_for (@transit) do |f| %>
-	<%= render 'shared/transit_error' %>
-      <%= f.input :passenger_name %>
+  <div class="col-md-6 col-md-offset-3">
+        <%= simple_form_for (@transit) do |f| %>
+  <%= render 'shared/transit_error' %>
+      <%= f.association :members , hint: 'Select multiple members by using Ctrl+Left Click', input_html: {:style => "height:300px"},wrapper_html: {:style => "float:left"}%>
 
-      <%= f.input :date_departure %>
+      <%= f.association :transports, input_html: {:style => "height:300px"}, wrapper_html: {:style => "float:right"} %>
 
-      <%= f.input :date_arrival %>
+      <%= f.input :date, :as => :string, :input_html => { :class => 'datepicker',:style => "width:260px;display:inline;margin-left:10px" } , placeholder: 'Click for calendar/date picker', wrapper_html: {:style => "clear:both" } %>
 
-	  <%= f.input :sector %>
+      <%= f.input :time, input_html: {:style => "width:70px;display:inline"}%>
 
-	  <%= f.input :flight_no %>
+    <%= f.input :flight_no, placeholder: 'MH2585',input_html: {:style => "width:90px;display:inline;margin-left:10px"} %>
 
-	  <%= f.input :terminal %>
+    <%= f.input :food %>
+
+    <%= f.input :transportation %>
+
+    <%= f.input :accommodation %>
+
+    <%= f.hidden_field :status , :value => 0 %>
 
       <%= f.submit 'Create Record', class: "btn btn-large btn-primary" %>
     <% end %>

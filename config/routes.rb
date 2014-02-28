@@ -11,12 +11,14 @@ TusitaERP::Application.routes.draw do
     end
     root :to => 'categories#index', :via => :get
   end
-  resources :minutes
-  resources :transits
+  resources :roles
+  resources :transits do
+    collection do
+     put :complete
+     put :pending
+    end
+  end
   resources :transports
-  resources :expenses
-  resources :funds
-  resources :finances
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'users#index'
@@ -25,6 +27,7 @@ TusitaERP::Application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

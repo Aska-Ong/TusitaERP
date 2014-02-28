@@ -2,7 +2,7 @@
 <h1><%= t('views.create_new_account') %></h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="col-md-6 col-md-offset-3">
     <%= simple_form_for(@user) do |f| %>
 	<%= render 'shared/error_messages' %>
       <%= f.input :username %>
@@ -10,6 +10,8 @@
       <%= f.input :password %>
 
       <%= f.input :password_confirmation, required: true%>
+
+      <%= f.association :roles %>
 
       <%= f.submit t('views.create_account'), class: "btn btn-large btn-primary" %>
     <% end %>

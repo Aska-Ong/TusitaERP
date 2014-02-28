@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  transit_id: 1
+  transport_id: 1
+
+two:
+  transit_id: 1
+  transport_id: 1

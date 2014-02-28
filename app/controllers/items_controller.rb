@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show, :new, :create]
+add_breadcrumb "Home", :root_path
+add_breadcrumb "Item", :items_path
 
   def index
     @items = Item.paginate(page: params[:page])
@@ -7,14 +9,17 @@ before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show, :
 
   def show
     @item = Item.find(params[:id])
+    add_breadcrumb "Item Details"
   end
 
   def new
   	@item = Item.new
+    add_breadcrumb "New Item"
   end
 
   def edit
     @item = Item.find(params[:id])
+    add_breadcrumb "Edit Item"
   end
 
   def update

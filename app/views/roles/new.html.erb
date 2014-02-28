@@ -1,0 +1,17 @@
+<% provide(:title, 'Create New Role') %>
+<h1>Create New Role</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for (@role) do |f| %>
+	<%= render 'shared/role_error' %>
+      <%= f.input :name %>
+      <%= f.input :inventory %>
+      <%= f.input :event %>
+      <%= f.input :transit %>
+      <%= f.input :forum %>
+
+      <%= f.submit 'Create Role', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

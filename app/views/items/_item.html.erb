@@ -1,6 +1,6 @@
-<li>
-  <p>Description: <%= item.name %></p>
-  <%= link_to "Edit", edit_item_path(Item.find(item.id)),:class => 'btn btn-primary'%>
-  <%= link_to "Delete", item, method: :delete,
-                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
-</li>
+<tr>
+  <td><%= item.name %></td>
+  <td><%= link_to "Edit", edit_item_path(Item.find(item.id)),:class => 'btn btn-primary'%></td>
+  <td><%= link_to "Delete", item, method: :delete,
+                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %></td>
+</tr>

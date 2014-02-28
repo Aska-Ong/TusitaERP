@@ -1,0 +1,2 @@
+class TransportrecordsController < ApplicationController
+end

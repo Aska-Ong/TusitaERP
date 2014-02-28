@@ -1,7 +1,7 @@
 <% provide(:title, 'Event Reports') %>
 <h1><%= t('views.event_reports') %></h1>
 <div class="row">
-<div class="span6 offset3">
+<div class="col-md-6 col-md-offset-3">
 <%= simple_form_for :temp, :method => "get", :url => event_path do |f| %>
 <% @events = Event.all %>
 <%= f.input :event_id,collection:@events %>

@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    render :action => "new", :layout => "signin"
   end
 
   def create
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to users_url
     else
       flash.now[:error] = 'Invalid username/password combination'
-      render 'new'
+      render :action => "new", :layout => "signin"
     end
   end
 
