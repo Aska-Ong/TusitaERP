@@ -1,7 +1,0 @@
-<li>
-  <div class="float-left"><%= expense.description %> : <%= expense.amount %> <div>Date : <%=expense.date%></div></div>
-  <div class="float-right"><%= link_to "Edit", edit_expense_path(Expense.find(expense.id)),:class => 'btn btn-primary'%>
-  <%= link_to "Delete", expense, method: :delete,
-                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
-  </div>
-</li>

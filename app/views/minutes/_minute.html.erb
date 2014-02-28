@@ -1,8 +1,0 @@
-<li>
-  <p>Title: <%= minute.name %></p>
-  <p>Date: <%= minute.date %></p>
-  <p><%= simple_format(minute.content, {class: "minute_content"}, sanitize: false) %></p>
-  <%= link_to "Edit", edit_minute_path(Minute.find(minute.id)),:class => 'btn btn-primary'%>
-  <%= link_to "Delete", minute, method: :delete,
-                                  data: { confirm: "You sure?" },:class => 'btn btn-primary' %>
-</li>
